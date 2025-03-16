@@ -5,34 +5,34 @@
     <title>哈夫克社区 | Futuristic Community</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        #volume-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(30, 39, 61, 0.5);
+            color: #00ffff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
+    <button id="volume-button">🔇</button>
     <div class="container">
         <header>
-            <div class="header-content">
-                <img src="haavkicon.jpg" alt="哈夫克社区 logo" class="logo">
-                <div class="header-text">
-                    <h1 id="typed-title"></h1>
-                    <p class="subtitle">未来已至 | The Future Is Now</p>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#members"><i class="fas fa-users"></i> 社区成员</a></li>
-                </ul>
-            </nav>
+            <img src="haavkicon.jpg" alt="哈夫克社区 logo" style="display: block; margin: 0 auto; max-width: 120px; max-height: 120px; border-radius: 50%;">
+            <h1>哈夫克社区</h1>
         </header>
         
-        <section id="members" class="members-section">
+        <section id="members">
             <div class="members-grid">
-                <div class="member-section leader-section">
+                <div class="member-section">
                     <h3>社长</h3>
-                    <div class="leader-card">
-                        <i class="fas fa-crown leader-icon"></i>
-                        <p>P4XT0N</p>
-                    </div>
+                    <p>P4XT0N</p>
                 </div>
                 <div class="member-section">
                     <h3>全部社区成员</h3>
@@ -81,6 +81,12 @@
                 </div>
             </div>
         </section>
+
+        <section id="random-text" style="text-align: center; margin-top: 20px;">
+            <p id="random-text-content">每一个人的存在都有价值 -- P4XT0N</p>
+            <img id="refresh-icon" src="refresh_icon.png" alt="Refresh" style="width: 30px; height: 30px; cursor: pointer; display: inline-block;" onclick="updateRandomText()">
+        </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
