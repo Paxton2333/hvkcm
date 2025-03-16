@@ -7,6 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        #play-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(30, 39, 61, 0.5);
+            color: #00ffff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
         #volume-button {
             position: absolute;
             top: 10px;
@@ -22,6 +34,7 @@
     </style>
 </head>
 <body>
+    <button id="play-button">▶️</button>
     <button id="volume-button">🔇</button>
     <div class="container">
         <header>
@@ -89,7 +102,6 @@
         </section>
     </div>
     <script src="script.js"></script>
-    <!-- Add your audio file here -->
-    <audio id="background-music" src="industrialhero.mp3" loop autoplay></audio>
+    <audio id="background-music" src="industrialhero.mp3" loop></audio>
 </body>
 </html>
