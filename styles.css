@@ -1,10 +1,8 @@
 :root {
-    --primary-color: #4a90e2;
-    --secondary-color: #5f27cd;
-    --background-color: #f4f6f9;
-    --text-color: #2c3e50;  
-    --soft-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    --fancy-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --primary-color: #00ffff;
+    --secondary-color: #1a1a2e;
+    --background-color: #0a0a1a;
+    --text-color: #00ffff;
 }
 
 * {
@@ -14,651 +12,168 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', 'Microsoft YaHei', Arial, sans-serif;
     line-height: 1.6;
-    background-color: var(--background-color);
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--secondary-color) 100%);
     color: var(--text-color);
-    font-weight: 600;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8ebee 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-#app {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
 header {
+    background-color: rgba(30, 39, 61, 0.5);
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
     text-align: center;
-    margin-bottom: 40px;
-    position: relative;
+    padding: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
 }
 
-header h1 {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 2.5em;
-    background: var(--fancy-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    padding: 0 10px;
-    position: relative;
-}
-
-header h1::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--fancy-gradient);
-    border-radius: 2px;
-}
-
-main {
-    background-color: white;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: var(--soft-shadow);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-.post-list {
+.header-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
-.post-item {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 6px;
-    border-left: 4px solid var(--primary-color);
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 10px var(--primary-color));
+    transition: transform 0.3s ease;
 }
 
-.post-item h3 {
-    margin-bottom: 10px;
-    color: var(--primary-color);
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
-.post-item small {
-    color: #777;
-    font-size: 0.8em;
-}
-
-.empty-state {
+.header-text {
     text-align: center;
-    color: #888;
-    padding: 20px;
 }
 
-form {
+h1 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--primary-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    gap: 20px;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-form textarea {
-    min-height: 120px;
-}
-
-button {
-    background-color: var(--primary-color);
+nav ul li a:hover {
     color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
 }
 
-button:hover {
-    background-color: var(--secondary-color);
-}
-
-#members {
-    margin-bottom: 30px;
-}
-
-.member-list {
-    background-color: #f9fafc;
-    border-radius: 12px;
+.members-section {
+    background-color: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    margin: 30px 0;
     padding: 30px;
-    box-shadow: var(--soft-shadow);
 }
 
-.member-section {
-    margin-bottom: 20px;
-}
-
-.member-section h3 {
-    color: var(--secondary-color);
-    border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.member-section ul {
-    list-style-type: none;
+.members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
 }
 
-.member-section ul li {
-    background-color: white;
-    padding: 12px;
-    border-radius: 8px;
+.leader-section h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.leader-card {
+    background-color: rgba(30, 39, 61, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.leader-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: gold;
+    font-size: 1.5rem;
+}
+
+.members-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.members-list li {
+    background-color: rgba(30, 39, 61, 0.5);
+    color: var(--primary-color);
+    padding: 15px 10px;
+    border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.member-section ul li:hover {
+.members-list li:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    border-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
 }
 
-.member-section ul li[data-name="yingying"] {
-    color: #ff69b4;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffc3a0 0%, #ff69b4 100%);
-    color: white;
-    position: relative;
+@keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 5px var(--primary-color); }
+    50% { text-shadow: 0 0 15px var(--primary-color); }
 }
 
-.member-section ul li[data-name="yingying"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(255, 105, 180, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="yingying"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="ssssongyi"] {
-    color: #6a11cb;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #8a4fff 0%, #6a11cb 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="ssssongyi"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(108, 48, 208, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="ssssongyi"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="_Li_xiang_"] {
-    color: #ff3333;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ff3333 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="_Li_xiang_"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(255, 51, 51, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="_Li_xiang_"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="chenaiCN"] {
-    color: #4a90e2;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #a7c9e6 0%, #4a90e2 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="chenaiCN"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(74, 144, 226, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="chenaiCN"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="P4XT0N"] {
-    color: #2d5f8a;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #7ab2e0 0%, #2d5f8a 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="P4XT0N"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(45, 95, 138, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="P4XT0N"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="HTDG"] {
-    color: #1a1a1a;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #d4af37 0%, #1a1a1a 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="HTDG"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(26, 26, 26, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="HTDG"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="xiao_xiao_A"] {
-    color: #ff69b4;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="xiao_xiao_A"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(255, 105, 180, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="xiao_xiao_A"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="Jueshadada"] {
-    color: #1a1a1a;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #8b0000 0%, #1a1a1a 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="Jueshadada"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(26, 26, 26, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="Jueshadada"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="shengge"] {
-    color: #1a5f8a;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #4a7fa0 0%, #1a5f8a 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="shengge"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(26, 95, 138, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="shengge"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="hnnnnnnh"] {
-    color: #ff3333;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ff3333 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="hnnnnnnh"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(255, 51, 51, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="hnnnnnnh"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="Tanghelove"] {
-    color: #ff69b4;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="Tanghelove"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(255, 105, 180, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="Tanghelove"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="Yankon"] {
-    color: #d4af37;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="Yankon"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(212, 175, 55, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="Yankon"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="Kionababy"] {
-    color: #ff1493;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffb6c1 0%, #ff1493 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="Kionababy"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(255, 20, 147, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="Kionababy"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="weiyuling23333"] {
-    color: #2ecc71;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #7dcea0 0%, #2ecc71 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="weiyuling23333"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(46, 204, 113, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="weiyuling23333"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.member-section ul li[data-name="YULUO"] {
-    color: #2d5f8a;  
-    font-weight: bold;
-    background: linear-gradient(135deg, #7ab2e0 0%, #2d5f8a 100%);
-    color: white;
-    position: relative;
-}
-
-.member-section ul li[data-name="YULUO"] .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background-color: rgba(45, 95, 138, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.member-section ul li[data-name="YULUO"]:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #6c757d;
-    font-size: 0.9em;
+body {
+    animation: glowPulse 3s infinite alternate;
 }
