@@ -34,7 +34,7 @@ const texts = [
     "社长是出生 -- xiao_xiao_A",
     "让他们说去吧，经历只属于自己 -- Yankon",
     "加强天道超 -- ssssongyi",
-    "我，大道之行！ -- shengge",
+    "社长的恩情一辈子都还不完🖐🏻😭🖐🏻 -- shengge",
     "背负火影之名 -- Li_xiang",
     "加强深蓝！！！！ -- P4XT0N"
 ];
