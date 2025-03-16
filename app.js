@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('musicProgressBar');
     const audioElement = document.createElement('audio');
 
-    // Tech-themed tracks
+    // Updated tracks with more detailed information
     const tracks = [
         { 
             title: "Industrial Hero", 
             artist: "三角洲行动", 
-            emoji: "🤖", // Robot emoji for tech feel
-            icon: "🎚️", 
+            emoji: "🏭", // Factory emoji representing industrial theme
+            icon: "🎚️", // New icon for music player
             src: "/industrialhero.mp3"  
         }
     ];
